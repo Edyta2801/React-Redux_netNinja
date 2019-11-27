@@ -27,6 +27,9 @@
             handleMouseOver(e) {
                 console.log(e.target, e.pageX, e.pageY);
             }
+            handleCopy(e) {
+                console.log('Try being original for once')
+            }
 
             render() {
                 return (
@@ -35,6 +38,7 @@
                         <p>My name is:{this.state.name} and I am {this.state.age}</p>
                         <button onClick={this.handleClick} > Click me</button>
                         <button onMouseOver={this.handleMouseOver}> Hover me</button>
+                        <p onCopy={this.handleCopy}>What we think, we become</p>
                     </div >
                 )
             }
