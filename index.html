@@ -21,12 +21,17 @@
                 name: 'Crystal',
                 age: 35
             }
+            handleClick(e) {
+                console.log(e.target);
+            }
+
             render() {
                 return (
                     <div className="app-content">
                         <h1>Hey, ninjas</h1>
                         <p>My name is:{this.state.name} and I am {this.state.age}</p>
-                    </div>
+                        <button onClick={this.handleClick} > Click me</button>
+                    </div >
                 )
             }
         }
