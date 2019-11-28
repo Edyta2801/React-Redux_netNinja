@@ -26,7 +26,7 @@
                 console.log(this.state);
                 this.setState({
                     name: 'Yoshi',
-                    age:25
+                    age: 25
                 })
             }
             handleMouseOver = (e) => {
@@ -37,6 +37,11 @@
                 console.log('Try being original for once')
                 console.log(this.state);
             }
+            handleChange = (e) => {
+                this.setState({
+                    name: e.target.value
+                })
+            }
 
             render() {
                 return (
@@ -46,6 +51,10 @@
                         <button onClick={this.handleClick} > Click me</button>
                         <button onMouseOver={this.handleMouseOver}> Hover me</button>
                         <p onCopy={this.handleCopy}>What we think, we become</p>
+                        <form>
+                            <input type="text" onChange={this.handleChange} />
+                            <button>Submit</button>
+                        </form>
                     </div >
                 )
             }
