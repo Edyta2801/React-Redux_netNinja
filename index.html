@@ -42,6 +42,9 @@
                     name: e.target.value
                 })
             }
+            HandleSubmit=(e)=>{
+                e.preventDefault();
+            }
 
             render() {
                 return (
@@ -51,7 +54,7 @@
                         <button onClick={this.handleClick} > Click me</button>
                         <button onMouseOver={this.handleMouseOver}> Hover me</button>
                         <p onCopy={this.handleCopy}>What we think, we become</p>
-                        <form>
+                        <form on Submit={this.handleSubmit}>
                             <input type="text" onChange={this.handleChange} />
                             <button>Submit</button>
                         </form>
