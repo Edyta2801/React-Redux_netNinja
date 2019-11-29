@@ -13,6 +13,8 @@ class App extends Component {
   }
   addNinja = (ninja) => {
     ninja.id = Math.random();
+
+    /* copy array using spread operator and add new array */
     let ninjas = [...this.state.ninjas, ninja];
     this.setState({
       ninjas: ninjas
