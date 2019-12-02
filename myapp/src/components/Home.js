@@ -1,7 +1,22 @@
+/* eslint-disable no-undef */
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pokeball from '../pokeball.png';
+
+const styles = {
+    image: {
+        position: 'absolute',
+        
+        left: -100,
+        opacity: 0.6,
+    },
+    article: {
+        overflow: 'hidden',
+        paddingLeft: 130,
+    },
+};
+
 
 class Home extends Component {
     state = {
@@ -24,11 +39,13 @@ class Home extends Component {
         const postList = posts.length ? (
             posts.map(post => {
                 return (
-                    <div className='post card' key={post.id}>
-                        <img src={Pokeball} alt="A pokeball"/>
+                    <div className='post card' key={post.id} style={styles.article}>
+                        <img src={Pokeball} alt="A pokeball"
+                            style={styles.image}
+                        />
                         <div className='card-content'>
                             <Link to={'/' + post.id}>
-                                <span className='card-title'>{post.title}</span>
+                                <span className='card-title blue-text'>{post.title}</span>
                             </Link>
                             <p>{post.body}</p>
                         </div>
@@ -39,7 +56,7 @@ class Home extends Component {
                 <div className="center">No posts yet</div>
             )
         return (
-            <div className='container'>
+            <div className='container' >
                 <h4 className='center'>Home</h4>
                 {postList}
             </div>
