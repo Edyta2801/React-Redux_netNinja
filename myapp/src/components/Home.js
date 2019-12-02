@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Pokeball from '../pokeball.png';
