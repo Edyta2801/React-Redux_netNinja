@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Pokeball from '../pokeball.png';
-import {connect}from 'react-redux';
+import { connect } from 'react-redux';
 
 const styles = {
     image: {
@@ -20,7 +20,7 @@ const styles = {
 class Home extends Component {
 
     render() {
-console.log(this.props)
+        console.log(this.props)
 
         const { posts } = this.props;
         const postList = posts.length ? (
@@ -41,19 +41,22 @@ console.log(this.props)
             })
         ) : (
                 <div className="center">No posts yet</div>
-            )
+            );
         return (
-            <div className='container' >
-                <h4 className='center'>Home</h4>
-                {postList}
+            <div>
+                <div className='container home' >
+                    <h4 className='center'>Home</h4>
+                    {postList}
+                </div>
             </div>
+
         )
     }
 }
 
-const mapStateToProps=(state)=>{
-    return{
-        posts:state.posts
+const mapStateToProps = (state) => {
+    return {
+        posts: state.posts
     }
 }
 
