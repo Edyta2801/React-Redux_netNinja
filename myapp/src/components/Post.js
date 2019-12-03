@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 class Post extends Component {
   handleClick = () => {
     this.props.deletePost(this.props.post.id);
+    // back to home page
     this.props.history.push('/');
   }
   render() {
@@ -13,7 +14,7 @@ class Post extends Component {
         <h4 className="center">{this.props.post.title}</h4>
         <p>{this.props.post.body}</p>
         <div className="center">
-          <button className="btn grey" onClick={this.handleClick}>
+          <button className="btn red" onClick={this.handleClick}>
             Delete Post
           </button>
         </div>
